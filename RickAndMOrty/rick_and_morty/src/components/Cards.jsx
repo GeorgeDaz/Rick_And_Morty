@@ -12,12 +12,19 @@ export const DivCards = styled.div `
 
 `;
 
-function Cards(props) {
-   const { characters } = props;
+function Cards({characters, onClose}) {
+   
    return (
    <DivCards>
       {characters.map((char)=>{
-         return <Card id={char.id} name={char.name} species={char.species} gender= {char.gender} image={char.image} onClose={() => window.alert('Emulamos que se cierra la card')} />
+         return (<Card 
+         id={char.id} 
+         name={char.name} 
+         species={char.species} 
+         gender= {char.gender} 
+         image={char.image} 
+         onClose={onClose} />
+         );
       })}
 
    </DivCards>

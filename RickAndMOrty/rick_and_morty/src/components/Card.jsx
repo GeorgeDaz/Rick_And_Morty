@@ -35,10 +35,11 @@ export const Imagen = styled.img `
       border-radius: 10px;
 `
 
-function Card({name, species, gender, image, onClose}) {
+function Card({id, name, species, gender, image, onClose}) {
    return (
       <DivCard>
-            <Botones onClick={onClose}>X</Botones>
+            <Botones onClick={() => onClose(id)}>X</Botones>
+            {/* onClick={() => onClose(id) */}
          <DivChar>
             <Imagen src={image} alt={''} />
             <h2>Nombre: {name}</h2>
