@@ -18,6 +18,7 @@ function Cards({characters, onClose}) {
    <DivCards>
       {characters.map((char)=>{
          return (<Card 
+         key={char.id}
          id={char.id} 
          name={char.name} 
          species={char.species} 

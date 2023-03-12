@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 
 export const DivCard = styled.div `
@@ -12,6 +13,7 @@ export const DivCard = styled.div `
       flex-direction: column;
       margin-bottom: 10px;
       position: relative;
+      
       `;  
 export const Botones = styled.button `
       border:0px;
@@ -29,7 +31,6 @@ export const DivChar = styled.div `
       font-size: 7px;
       text-align: center;
 `
-
 export const Imagen = styled.img `
       width: 100px;
       border-radius: 10px;
@@ -42,7 +43,8 @@ function Card({id, name, species, gender, image, onClose}) {
             {/* onClick={() => onClose(id) */}
          <DivChar>
             <Imagen src={image} alt={''} />
-            <h2>Nombre: {name}</h2>
+            {/* <h2>Nombre: {name}</h2> */}
+            <Link to={`/detail/${id}`}> <h2> {name}</h2> </Link>
             <h2>Especie: {species}</h2>
             <h2>Género: {gender}</h2>
          </DivChar>
